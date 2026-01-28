@@ -1,6 +1,6 @@
 # Ultimate RF Toolkit v8.0 - Complete Documentation
 
-## 🚀 What's New in v8.0 (1000x Better!)
+## 🚀 What's New in v8.0
 
 ### Major Improvements Over v7:
 
