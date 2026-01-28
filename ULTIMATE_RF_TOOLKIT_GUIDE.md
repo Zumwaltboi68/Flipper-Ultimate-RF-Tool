@@ -1,6 +1,6 @@
 # Ultimate RF Toolkit v8.0 - Complete Documentation
 
-## 🚀 What's New in v8.0 (1000x Better!)
+## 🚀 What's New in v8.0
 
 ### Major Improvements Over v7:
 
@@ -682,8 +682,6 @@ Potential features for v9.0:
 MIT License - Free to use, modify, and distribute.
 
 ## 🙏 Credits
-
-- Original concept from gen_v7.py
 - Enhanced with research from tobiabocchi/flipperzero-bruteforce
 - Protocol database compiled from UberGuidoZ and community
 - De Bruijn algorithm based on FKM paper
