@@ -480,8 +480,6 @@ Potential features for v9.0:
 MIT License - Free to use, modify, and distribute.
 
 ## 🙏 Credits
-
-- Original concept from gen_v7.py
 - Enhanced with research from tobiabocchi/flipperzero-bruteforce
 - Protocol database compiled from UberGuidoZ and community
 - De Bruijn algorithm based on FKM paper
