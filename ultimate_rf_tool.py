@@ -72,15 +72,32 @@ class ProtocolSpec:
                 self.preset = "FuriHalSubGhzPresetOok650Async"
 
 
-# Comprehensive Protocol Database
+# ═══════════════════════════════════════════════════════════════════════════════
+# MASSIVE PROTOCOL DATABASE - 100+ Protocols
+# ═══════════════════════════════════════════════════════════════════════════════
+
 PROTOCOLS_DB = {
-    # ═══ GARAGE DOORS & GATES ═══
+    # ═══ GARAGE DOORS & GATES (Expanded) ═══
     "CAME": ProtocolSpec(
         "CAME", 12, 433_920_000, "OOK",
         bit0_timing=(-300, 600), bit1_timing=(-600, 300),
         preamble=(-12700, 300),
         description="Most common garage door protocol worldwide",
         category="garage", region="global", manufacturer="CAME"
+    ),
+    "CAME_SPACE": ProtocolSpec(
+        "CAME_SPACE", 12, 433_920_000, "OOK",
+        bit0_timing=(-320, 640), bit1_timing=(-640, 320),
+        preamble=(-13000, 320),
+        description="CAME Space - newer variant",
+        category="garage", region="europe", manufacturer="CAME"
+    ),
+    "CAME_ATOMO": ProtocolSpec(
+        "CAME_ATOMO", 64, 433_920_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="CAME Atomo - rolling code variant",
+        category="garage", region="europe", manufacturer="CAME"
     ),
     "CAME_FAST": ProtocolSpec(
         "CAME_FAST", 12, 433_920_000, "OOK",
@@ -158,6 +175,230 @@ PROTOCOLS_DB = {
         preamble=(-6000, 350),
         description="Ansonic gate remote",
         category="garage", region="asia", manufacturer="Ansonic"
+    ),
+    "BFT_MITTO": ProtocolSpec(
+        "BFT_MITTO", 64, 433_920_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-10000, 400),
+        description="BFT Mitto - Keeloq with seed",
+        category="garage", region="europe", manufacturer="BFT"
+    ),
+    "BFT_KLEIO": ProtocolSpec(
+        "BFT_KLEIO", 12, 433_920_000, "OOK",
+        bit0_timing=(-350, 700), bit1_timing=(-700, 350),
+        preamble=(-11000, 350),
+        description="BFT Kleio fixed code",
+        category="garage", region="europe", manufacturer="BFT"
+    ),
+    "DITEC_GOL4": ProtocolSpec(
+        "DITEC_GOL4", 12, 433_920_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="Ditec GOL4 gate remote",
+        category="garage", region="europe", manufacturer="Ditec"
+    ),
+    "DITEC_BIXLP": ProtocolSpec(
+        "DITEC_BIXLP", 15, 433_920_000, "OOK",
+        bit0_timing=(-380, 760), bit1_timing=(-760, 380),
+        preamble=(-14000, 380),
+        description="Ditec BIXLP 15-bit",
+        category="garage", region="europe", manufacturer="Ditec"
+    ),
+    "ERREKA": ProtocolSpec(
+        "ERREKA", 64, 433_920_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-10000, 400),
+        description="Erreka - Keeloq rolling code",
+        category="garage", region="spain", manufacturer="Erreka"
+    ),
+    "GIBIDI": ProtocolSpec(
+        "GIBIDI", 12, 433_920_000, "OOK",
+        bit0_timing=(-340, 680), bit1_timing=(-680, 340),
+        preamble=(-13000, 340),
+        description="Gibidi gate automation",
+        category="garage", region="europe", manufacturer="Gibidi"
+    ),
+    "GIBIDI_AU1600": ProtocolSpec(
+        "GIBIDI_AU1600", 12, 433_920_000, "OOK",
+        bit0_timing=(-320, 640), bit1_timing=(-640, 320),
+        preamble=(-12500, 320),
+        description="Gibidi AU1600 series",
+        category="garage", region="europe", manufacturer="Gibidi"
+    ),
+    "APRIMATIC": ProtocolSpec(
+        "APRIMATIC", 18, 433_920_000, "OOK",
+        bit0_timing=(-350, 700), bit1_timing=(-700, 350),
+        preamble=(-13000, 350),
+        description="Aprimatic gate remote",
+        category="garage", region="europe", manufacturer="Aprimatic"
+    ),
+    "APRIMATIC_TR": ProtocolSpec(
+        "APRIMATIC_TR", 64, 433_920_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-10000, 400),
+        description="Aprimatic TR - Keeloq variant",
+        category="garage", region="europe", manufacturer="Aprimatic"
+    ),
+    "SOMFY_KEYTIS": ProtocolSpec(
+        "SOMFY_KEYTIS", 56, 433_420_000, "OOK",
+        bit0_timing=(-640, 640), bit1_timing=(-1280, 640),
+        preamble=(-2560, 2560),
+        description="Somfy Keytis RTS",
+        category="garage", region="europe", manufacturer="Somfy"
+    ),
+    "SOMFY_TELIS": ProtocolSpec(
+        "SOMFY_TELIS", 56, 433_420_000, "OOK",
+        bit0_timing=(-640, 640), bit1_timing=(-1280, 640),
+        preamble=(-2560, 2560),
+        description="Somfy Telis (blinds/shutters)",
+        category="garage", region="europe", manufacturer="Somfy"
+    ),
+    "NICE_SMILO": ProtocolSpec(
+        "NICE_SMILO", 64, 433_920_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-10000, 400),
+        description="Nice Smilo - Keeloq rolling code",
+        category="garage", region="europe", manufacturer="Nice"
+    ),
+    "NICE_ONE": ProtocolSpec(
+        "NICE_ONE", 24, 433_920_000, "OOK",
+        bit0_timing=(-500, 1000), bit1_timing=(-1000, 500),
+        preamble=(-15000, 500),
+        description="Nice One fixed code",
+        category="garage", region="europe", manufacturer="Nice"
+    ),
+    "HORMANN_HSM": ProtocolSpec(
+        "HORMANN_HSM", 24, 433_920_000, "OOK",
+        bit0_timing=(-500, 1000), bit1_timing=(-1000, 500),
+        preamble=(-15000, 500),
+        description="Hörmann HSM series",
+        category="garage", region="europe", manufacturer="Hörmann"
+    ),
+    "HORMANN_HS": ProtocolSpec(
+        "HORMANN_HS", 14, 868_350_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-11000, 400),
+        description="Hörmann HS @ 868 MHz",
+        category="garage", region="europe", manufacturer="Hörmann"
+    ),
+    "MARANTEC_D302": ProtocolSpec(
+        "MARANTEC_D302", 24, 433_920_000, "OOK",
+        bit0_timing=(-450, 900), bit1_timing=(-900, 450),
+        preamble=(-14000, 450),
+        description="Marantec Digital 302",
+        category="garage", region="europe", manufacturer="Marantec"
+    ),
+    "MARANTEC_D304": ProtocolSpec(
+        "MARANTEC_D304", 24, 868_350_000, "OOK",
+        bit0_timing=(-450, 900), bit1_timing=(-900, 450),
+        preamble=(-14000, 450),
+        description="Marantec Digital 304 @ 868 MHz",
+        category="garage", region="europe", manufacturer="Marantec"
+    ),
+    "NOVOFERM": ProtocolSpec(
+        "NOVOFERM", 40, 433_920_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-10000, 400),
+        description="Novoferm garage door",
+        category="garage", region="europe", manufacturer="Novoferm"
+    ),
+    "SOMMER": ProtocolSpec(
+        "SOMMER", 40, 433_920_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-10000, 400),
+        description="Sommer garage door opener",
+        category="garage", region="europe", manufacturer="Sommer"
+    ),
+    "BENINCA": ProtocolSpec(
+        "BENINCA", 64, 433_920_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-10000, 400),
+        description="Beninca + Allmatic Keeloq",
+        category="garage", region="europe", manufacturer="Beninca"
+    ),
+    "BERNER": ProtocolSpec(
+        "BERNER", 12, 433_920_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="Berner garage door",
+        category="garage", region="europe", manufacturer="Berner"
+    ),
+    "ELKA": ProtocolSpec(
+        "ELKA", 12, 433_920_000, "OOK",
+        bit0_timing=(-310, 620), bit1_timing=(-620, 310),
+        preamble=(-12500, 310),
+        description="Elka gate remote",
+        category="garage", region="europe", manufacturer="Elka"
+    ),
+    "ALLMATIC": ProtocolSpec(
+        "ALLMATIC", 64, 433_920_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-10000, 400),
+        description="Allmatic Keeloq rolling code",
+        category="garage", region="europe", manufacturer="Allmatic"
+    ),
+    "LIFT_MASTER": ProtocolSpec(
+        "LIFT_MASTER", 10, 315_000_000, "OOK",
+        bit0_timing=(-500, 1000), bit1_timing=(-1000, 500),
+        preamble=(-15000, 500),
+        description="LiftMaster fixed code (older)",
+        category="garage", region="north_america", manufacturer="LiftMaster"
+    ),
+    "GENIE_INTELLICODE": ProtocolSpec(
+        "GENIE_INTELLICODE", 24, 315_000_000, "OOK",
+        bit0_timing=(-450, 900), bit1_timing=(-900, 450),
+        preamble=(-14000, 450),
+        description="Genie Intellicode",
+        category="garage", region="north_america", manufacturer="Genie"
+    ),
+    "OVERHEAD_DOOR": ProtocolSpec(
+        "OVERHEAD_DOOR", 9, 390_000_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="Overhead Door CodeDodger",
+        category="garage", region="north_america", manufacturer="Overhead Door"
+    ),
+    "WAYNE_DALTON": ProtocolSpec(
+        "WAYNE_DALTON", 16, 318_000_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-13000, 400),
+        description="Wayne Dalton i-Drive",
+        category="garage", region="north_america", manufacturer="Wayne Dalton"
+    ),
+    "CRAFTSMAN": ProtocolSpec(
+        "CRAFTSMAN", 10, 315_000_000, "OOK",
+        bit0_timing=(-500, 1000), bit1_timing=(-1000, 500),
+        preamble=(-15000, 500),
+        description="Craftsman garage opener",
+        category="garage", region="north_america", manufacturer="Craftsman"
+    ),
+    "CENTURION": ProtocolSpec(
+        "CENTURION", 64, 433_920_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-10000, 400),
+        description="Centurion Nova Keeloq",
+        category="garage", region="south_africa", manufacturer="Centurion"
+    ),
+    "MERLIN": ProtocolSpec(
+        "MERLIN", 12, 433_920_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="Merlin garage door (Australia)",
+        category="garage", region="australia", manufacturer="Merlin"
+    ),
+    "BOSS_BHT": ProtocolSpec(
+        "BOSS_BHT", 12, 433_920_000, "OOK",
+        bit0_timing=(-320, 640), bit1_timing=(-640, 320),
+        preamble=(-13000, 320),
+        description="B&D/Boss BHT series",
+        category="garage", region="australia", manufacturer="Boss"
+    ),
+    "ATA_PTX": ProtocolSpec(
+        "ATA_PTX", 9, 433_920_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="ATA PTX-4 (Australia)",
+        category="garage", region="australia", manufacturer="ATA"
     ),
     
     # ═══ PT2260 SERIES ═══
@@ -266,6 +507,337 @@ PROTOCOLS_DB = {
         preamble=(-12700, 300),
         description="Generic 16-bit fixed code",
         category="generic", region="global", manufacturer="Generic"
+    ),
+    
+    # ═══ RESTAURANT PAGERS ═══
+    "RETEKESS_T119": ProtocolSpec(
+        "RETEKESS_T119", 16, 433_920_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="Retekess T119 restaurant pager system",
+        category="pager", region="global", manufacturer="Retekess"
+    ),
+    "RETEKESS_TD157": ProtocolSpec(
+        "RETEKESS_TD157", 16, 433_920_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-10000, 400),
+        description="Retekess TD157 long range pager (984ft)",
+        category="pager", region="global", manufacturer="Retekess"
+    ),
+    "RETEKESS_TD165": ProtocolSpec(
+        "RETEKESS_TD165", 16, 433_920_000, "OOK",
+        bit0_timing=(-350, 700), bit1_timing=(-700, 350),
+        preamble=(-11000, 350),
+        description="Retekess TD165 (SU-668) coaster pager",
+        category="pager", region="global", manufacturer="Retekess"
+    ),
+    "RETEKESS_TD174": ProtocolSpec(
+        "RETEKESS_TD174", 13, 433_920_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="Retekess TD174 (SU-68G) compact 10-pager",
+        category="pager", region="global", manufacturer="Retekess"
+    ),
+    "GENERIC_PAGER": ProtocolSpec(
+        "GENERIC_PAGER", 16, 467_750_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        preamble=(-14000, 400),
+        description="Generic restaurant/hospital pager",
+        category="pager", region="global", manufacturer="Generic"
+    ),
+    
+    # ═══ MORE GARAGE/GATE SYSTEMS ═══
+    "BFT_MITTO": ProtocolSpec(
+        "BFT_MITTO", 12, 433_920_000, "OOK",
+        bit0_timing=(-320, 640), bit1_timing=(-640, 320),
+        preamble=(-13000, 320),
+        description="BFT Mitto gate remote (Italy)",
+        category="garage", region="europe", manufacturer="BFT"
+    ),
+    "SOMFY_KEYTIS": ProtocolSpec(
+        "SOMFY_KEYTIS", 56, 433_420_000, "OOK",
+        bit0_timing=(-640, 640), bit1_timing=(-1280, 320),
+        description="Somfy Keytis RTS rolling code",
+        category="garage", region="europe", manufacturer="Somfy"
+    ),
+    "HORMANN_HSM4": ProtocolSpec(
+        "HORMANN_HSM4", 44, 868_300_000, "OOK",
+        bit0_timing=(-400, 400), bit1_timing=(-800, 400),
+        description="Hörmann HSM4 868 MHz garage door",
+        category="garage", region="europe", manufacturer="Hörmann"
+    ),
+    "MARANTEC_D302": ProtocolSpec(
+        "MARANTEC_D302", 24, 433_920_000, "OOK",
+        bit0_timing=(-500, 1000), bit1_timing=(-1000, 500),
+        preamble=(-15000, 500),
+        description="Marantec Digital 302 garage door",
+        category="garage", region="europe", manufacturer="Marantec"
+    ),
+    "NOVOFERM": ProtocolSpec(
+        "NOVOFERM", 12, 433_920_000, "OOK",
+        bit0_timing=(-350, 700), bit1_timing=(-700, 350),
+        preamble=(-12000, 350),
+        description="Novoferm garage door opener",
+        category="garage", region="europe", manufacturer="Novoferm"
+    ),
+    "ELKA": ProtocolSpec(
+        "ELKA", 12, 433_920_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="ELKA gate/door remote",
+        category="garage", region="europe", manufacturer="ELKA"
+    ),
+    "PROTECO": ProtocolSpec(
+        "PROTECO", 12, 433_920_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="Proteco gate automation",
+        category="garage", region="europe", manufacturer="Proteco"
+    ),
+    
+    # ═══ CAR REMOTES (AFTERMARKET) ═══
+    "AUTOPAGE": ProtocolSpec(
+        "AUTOPAGE", 10, 315_000_000, "OOK",
+        bit0_timing=(-500, 1000), bit1_timing=(-1000, 500),
+        preamble=(-15000, 500),
+        description="Autopage car alarm system",
+        category="vehicle", region="north_america", manufacturer="Autopage"
+    ),
+    "VIPER_DEI": ProtocolSpec(
+        "VIPER_DEI", 10, 315_000_000, "OOK",
+        bit0_timing=(-500, 1000), bit1_timing=(-1000, 500),
+        preamble=(-15000, 500),
+        description="Viper/DEI car alarm remote",
+        category="vehicle", region="north_america", manufacturer="Viper"
+    ),
+    "CLIFFORD": ProtocolSpec(
+        "CLIFFORD", 10, 315_000_000, "OOK",
+        bit0_timing=(-500, 1000), bit1_timing=(-1000, 500),
+        preamble=(-15000, 500),
+        description="Clifford car alarm system",
+        category="vehicle", region="north_america", manufacturer="Clifford"
+    ),
+    
+    # ═══ ADDITIONAL PT/SC SERIES ═══
+    "SC2260": ProtocolSpec(
+        "SC2260", 12, 433_920_000, "OOK",
+        bit0_timing=(-350, 1050), bit1_timing=(-1050, 350),
+        preamble=(-350, 10850),
+        description="SC2260 (PT2260 compatible)",
+        category="generic", region="global", manufacturer="Silan"
+    ),
+    "SC2262": ProtocolSpec(
+        "SC2262", 12, 433_920_000, "OOK",
+        bit0_timing=(-350, 1050), bit1_timing=(-1050, 350),
+        preamble=(-350, 10850),
+        description="SC2262 learning code chip",
+        category="generic", region="global", manufacturer="Silan"
+    ),
+    "SMC5326": ProtocolSpec(
+        "SMC5326", 12, 433_920_000, "OOK",
+        bit0_timing=(-350, 1050), bit1_timing=(-1050, 350),
+        preamble=(-350, 10850),
+        description="SMC5326 remote control encoder",
+        category="generic", region="asia", manufacturer="SMC"
+    ),
+    "HT6P20B": ProtocolSpec(
+        "HT6P20B", 20, 433_920_000, "OOK",
+        bit0_timing=(-350, 1050), bit1_timing=(-1050, 350),
+        preamble=(-350, 10850),
+        description="Holtek HT6P20B encoder",
+        category="generic", region="global", manufacturer="Holtek"
+    ),
+    "HT12E": ProtocolSpec(
+        "HT12E", 12, 433_920_000, "OOK",
+        bit0_timing=(-350, 1050), bit1_timing=(-1050, 350),
+        preamble=(-350, 10850),
+        description="Holtek HT12E encoder IC",
+        category="generic", region="global", manufacturer="Holtek"
+    ),
+    
+    # ═══ SMART HOME / IoT ═══
+    "NEXA": ProtocolSpec(
+        "NEXA", 32, 433_920_000, "OOK",
+        bit0_timing=(-275, 275), bit1_timing=(-275, 1225),
+        preamble=(-275, 2675),
+        description="Nexa self-learning protocol",
+        category="smarthome", region="europe", manufacturer="Nexa"
+    ),
+    "HOME_EASY": ProtocolSpec(
+        "HOME_EASY", 12, 433_920_000, "OOK",
+        bit0_timing=(-300, 900), bit1_timing=(-900, 300),
+        preamble=(-12000, 300),
+        description="Home Easy (Byron) remote switches",
+        category="smarthome", region="europe", manufacturer="Byron"
+    ),
+    "INTERTECHNO": ProtocolSpec(
+        "INTERTECHNO", 32, 433_920_000, "OOK",
+        bit0_timing=(-350, 350), bit1_timing=(-350, 1050),
+        preamble=(-350, 10850),
+        description="Intertechno home automation",
+        category="smarthome", region="europe", manufacturer="Intertechno"
+    ),
+    "BRENNENSTUHL": ProtocolSpec(
+        "BRENNENSTUHL", 12, 433_920_000, "OOK",
+        bit0_timing=(-300, 900), bit1_timing=(-900, 300),
+        preamble=(-12000, 300),
+        description="Brennenstuhl RC outlets",
+        category="smarthome", region="europe", manufacturer="Brennenstuhl"
+    ),
+    "REV_RITTER": ProtocolSpec(
+        "REV_RITTER", 24, 433_920_000, "OOK",
+        bit0_timing=(-360, 1080), bit1_timing=(-1080, 360),
+        preamble=(-360, 10920),
+        description="REV Ritter remote outlets",
+        category="smarthome", region="europe", manufacturer="REV"
+    ),
+    "ELRO_AB440": ProtocolSpec(
+        "ELRO_AB440", 10, 433_920_000, "OOK",
+        bit0_timing=(-320, 960), bit1_timing=(-960, 320),
+        preamble=(-320, 9920),
+        description="Elro AB440 home automation",
+        category="smarthome", region="europe", manufacturer="Elro"
+    ),
+    
+    # ═══ SMART PLUGS & SWITCHES ═══
+    "ETEKCITY": ProtocolSpec(
+        "ETEKCITY", 24, 433_920_000, "OOK",
+        bit0_timing=(-350, 1050), bit1_timing=(-1050, 350),
+        preamble=(-350, 10850),
+        description="Etekcity wireless outlets",
+        category="outlet", region="north_america", manufacturer="Etekcity"
+    ),
+    "WOODS": ProtocolSpec(
+        "WOODS", 12, 433_920_000, "OOK",
+        bit0_timing=(-300, 900), bit1_timing=(-900, 300),
+        preamble=(-12000, 300),
+        description="Woods outdoor remote outlets",
+        category="outlet", region="north_america", manufacturer="Woods"
+    ),
+    "CENTURY": ProtocolSpec(
+        "CENTURY", 12, 433_920_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="Century wireless outlets",
+        category="outlet", region="north_america", manufacturer="Century"
+    ),
+    
+    # ═══ WIRELESS DOORBELLS (EXTENDED) ═══
+    "1BYONE": ProtocolSpec(
+        "1BYONE", 24, 433_920_000, "OOK",
+        bit0_timing=(-350, 1050), bit1_timing=(-1050, 350),
+        preamble=(-350, 10850),
+        description="1byone wireless doorbell",
+        category="doorbell", region="global", manufacturer="1byone"
+    ),
+    "SADOTECH": ProtocolSpec(
+        "SADOTECH", 24, 433_920_000, "OOK",
+        bit0_timing=(-400, 1200), bit1_timing=(-1200, 400),
+        preamble=(-400, 10400),
+        description="SadoTech wireless doorbell",
+        category="doorbell", region="north_america", manufacturer="SadoTech"
+    ),
+    "FOSMON": ProtocolSpec(
+        "FOSMON", 24, 433_920_000, "OOK",
+        bit0_timing=(-350, 1050), bit1_timing=(-1050, 350),
+        preamble=(-350, 10850),
+        description="Fosmon wireless doorbell",
+        category="doorbell", region="north_america", manufacturer="Fosmon"
+    ),
+    "AVANTEK": ProtocolSpec(
+        "AVANTEK", 24, 433_920_000, "OOK",
+        bit0_timing=(-400, 1200), bit1_timing=(-1200, 400),
+        preamble=(-400, 10400),
+        description="Avantek wireless doorbell",
+        category="doorbell", region="global", manufacturer="Avantek"
+    ),
+    "BYRON": ProtocolSpec(
+        "BYRON", 12, 433_920_000, "OOK",
+        bit0_timing=(-300, 900), bit1_timing=(-900, 300),
+        preamble=(-12000, 300),
+        description="Byron wireless doorbell (UK)",
+        category="doorbell", region="europe", manufacturer="Byron"
+    ),
+    
+    # ═══ TIRE PRESSURE MONITORING (TPMS) ═══
+    "TPMS_TOYOTA": ProtocolSpec(
+        "TPMS_TOYOTA", 64, 315_000_000, "OOK",
+        bit0_timing=(-50, 100), bit1_timing=(-100, 50),
+        description="Toyota TPMS sensor",
+        category="vehicle", region="global", manufacturer="Toyota"
+    ),
+    "TPMS_SCHRADER": ProtocolSpec(
+        "TPMS_SCHRADER", 64, 315_000_000, "OOK",
+        bit0_timing=(-50, 100), bit1_timing=(-100, 50),
+        description="Schrader EZ-Sensor TPMS",
+        category="vehicle", region="global", manufacturer="Schrader"
+    ),
+    
+    # ═══ FAN CONTROLLERS ═══
+    "HUNTER_FAN": ProtocolSpec(
+        "HUNTER_FAN", 12, 315_000_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="Hunter ceiling fan remote",
+        category="fan", region="north_america", manufacturer="Hunter"
+    ),
+    "HAMPTON_BAY": ProtocolSpec(
+        "HAMPTON_BAY", 12, 315_000_000, "OOK",
+        bit0_timing=(-300, 600), bit1_timing=(-600, 300),
+        preamble=(-12700, 300),
+        description="Hampton Bay fan controller",
+        category="fan", region="north_america", manufacturer="Hampton Bay"
+    ),
+    
+    # ═══ BLINDS / SHADES ═══
+    "SOMFY_RTS": ProtocolSpec(
+        "SOMFY_RTS", 56, 433_420_000, "OOK",
+        bit0_timing=(-640, 640), bit1_timing=(-1280, 320),
+        description="Somfy RTS motorized blinds",
+        category="blinds", region="global", manufacturer="Somfy"
+    ),
+    "DOOYA": ProtocolSpec(
+        "DOOYA", 40, 433_920_000, "OOK",
+        bit0_timing=(-350, 700), bit1_timing=(-700, 350),
+        preamble=(-12000, 350),
+        description="Dooya motorized curtain",
+        category="blinds", region="asia", manufacturer="Dooya"
+    ),
+    
+    # ═══ LIGHTING CONTROL ═══
+    "LIGHTWAVE_RF": ProtocolSpec(
+        "LIGHTWAVE_RF", 24, 433_920_000, "OOK",
+        bit0_timing=(-250, 250), bit1_timing=(-250, 1250),
+        preamble=(-10000, 250),
+        description="LightwaveRF lighting control",
+        category="lighting", region="europe", manufacturer="LightwaveRF"
+    ),
+    "SIEMENS_S7": ProtocolSpec(
+        "SIEMENS_S7", 32, 868_300_000, "OOK",
+        bit0_timing=(-400, 800), bit1_timing=(-800, 400),
+        description="Siemens lighting control",
+        category="lighting", region="europe", manufacturer="Siemens"
+    ),
+    
+    # ═══ SECURITY SENSORS (EXTENDED) ═══
+    "VISONIC": ProtocolSpec(
+        "VISONIC", 36, 433_920_000, "OOK",
+        bit0_timing=(-500, 1000), bit1_timing=(-1000, 500),
+        description="Visonic security sensor",
+        category="security", region="europe", manufacturer="Visonic"
+    ),
+    "CHACON": ProtocolSpec(
+        "CHACON", 12, 433_920_000, "OOK",
+        bit0_timing=(-320, 960), bit1_timing=(-960, 320),
+        preamble=(-320, 9920),
+        description="Chacon security devices",
+        category="security", region="europe", manufacturer="Chacon"
+    ),
+    "X10_RF": ProtocolSpec(
+        "X10_RF", 32, 310_000_000, "OOK",
+        bit0_timing=(-500, 500), bit1_timing=(-1500, 500),
+        description="X10 RF home security",
+        category="security", region="north_america", manufacturer="X10"
     ),
 }
 
@@ -1009,7 +1581,8 @@ For more information: https://github.com/yourusername/ultimate-rf-toolkit
     
     parser.add_argument(
         '--list-by-category',
-        choices=['garage', 'security', 'doorbell', 'outlet', 'vehicle', 'weather', 'generic'],
+        choices=['garage', 'security', 'doorbell', 'outlet', 'vehicle', 'weather', 'generic', 
+                 'pager', 'smarthome', 'blinds', 'fan', 'lighting'],
         help='List protocols by category'
     )
     
